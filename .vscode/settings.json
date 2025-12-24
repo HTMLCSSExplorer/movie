@@ -1,0 +1,6 @@
+{
+  "vue.inlayHints.missingProps": true,
+  "vue.autoInsert.bracketSpacing": true,
+  "cSpell.words": ["Esic", "NJZVW"],
+  "eslint.useFlatConfig": true
+}
