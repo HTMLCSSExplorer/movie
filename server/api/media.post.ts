@@ -9,7 +9,10 @@ const BASE_URL = "https://api.themoviedb.org/3/";
 const ENDPOINTS: Record<TabValue, string[]> = {
   day: ["trending/all/day?language=en-US"],
   week: ["trending/all/week?language=en-US"],
-  popular: ["movie/popular?language=en-US&page=1", "tv/popular?language=en-US&page=1"],
+  popular: [
+    "movie/popular?language=en-US&page=1",
+    "tv/popular?language=en-US&page=1",
+  ],
   stream: [
     "discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=US&with_watch_monetization_types=flatrate",
     "discover/movie?include_adult=false&include_video=false&language=en-US&page=1&region=US&sort_by=popularity.desc&with_watch_monetization_types=flatrate",
@@ -41,10 +44,10 @@ export default defineEventHandler(async (event) => {
   }
 
   const urls = endpoint.map((path) => `${BASE_URL}${path}`);
- 
-  
   try {
-    const response = await Promise.all<MediaApiResponse>(urls.map((url) => $fetch(url, options)));
+    const response = await Promise.all<MediaApiResponse>(
+      urls.map((url) => $fetch(url, options))
+    );
     return response;
   } catch (error: any) {
     console.error("TMDB fetch error:", error.message);

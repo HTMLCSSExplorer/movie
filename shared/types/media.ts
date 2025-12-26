@@ -1,7 +1,7 @@
 import type { LanguageCode } from "./languageCodes";
 
-export type ActingDepartments = "Acting";
-export type MediaItem = TVMedia | MovieMedia | PersonMedia;
+export type ActingDepartments = "acting";
+export type MediaItem = TvMedia | MovieMedia | PersonMedia;
 export type MediaType = "movie" | "tv" | "person";
 
 export interface BaseMedia {
@@ -23,7 +23,7 @@ export interface MovieMedia extends BaseMedia {
   media_type: "movie";
   release_date: string;
 }
-export interface TVMedia extends BaseMedia {
+export interface TvMedia extends BaseMedia {
   name: string;
   original_name: string;
   media_type: "tv";
@@ -47,6 +47,10 @@ export interface PaginationApiResponse<T> {
   total_results: number;
 }
 export type MovieMediaApiResponse = PaginationApiResponse<MovieMedia>;
-export type TvMediaApiResponse = PaginationApiResponse<TVMedia>;
-export type PersonMediaApiResponse = PaginationApiResponse<PersonMedia>;
-export type MediaApiResponse = MovieMediaApiResponse | TvMediaApiResponse | PersonMediaApiResponse;
+export type TvMediaApiResponse = PaginationApiResponse<TvMedia>;
+export type PersonMediaApiResponse =
+  PaginationApiResponse<PersonMedia>;
+export type MediaApiResponse =
+  | MovieMediaApiResponse
+  | TvMediaApiResponse
+  | PersonMediaApiResponse;

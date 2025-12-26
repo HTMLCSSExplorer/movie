@@ -10,8 +10,5 @@ export type TabValue =
   | "freeshow";
 export interface TabItem {
   label: string;
-
   value: TabValue;
 }
-
- 

@@ -1,10 +1,12 @@
-export const shuffleArray = <T>(array: T[]): T[] => {
-  const result = [...array];
+export const ShuffledArray = <T>(array: T[]): T[] => {
+  const result: T[] = [...array];
 
-  let currentIndex = result.length;
+  let currentIndex: number = result.length;
 
   while (currentIndex !== 0) {
-    const randomIndex = Math.floor(Math.random() * currentIndex);
+    const randomIndex: number = Math.floor(
+      Math.random() * currentIndex
+    );
     currentIndex--;
 
     [result[currentIndex], result[randomIndex]] = [

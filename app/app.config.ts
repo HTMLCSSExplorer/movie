@@ -1,5 +1,9 @@
 export default defineAppConfig({
   ui: {
+    colors: {
+      primary: "blue",
+      secondary: "green",
+    },
     input: {
       slots: {
         root: "relative inline-flex items-center",
@@ -70,9 +74,11 @@ export default defineAppConfig({
         variant: {
           myVar:
             "  text-black text-sm md:text-lg font-semibold placeholder:text-sm  md:placeholder:text-lg ",
-          outline: "text-highlighted bg-default ring ring-inset ring-accented",
+          outline:
+            "text-highlighted bg-default ring ring-inset ring-accented",
           soft: "text-highlighted bg-elevated/50 hover:bg-elevated focus:bg-elevated disabled:bg-elevated/50",
-          subtle: "text-highlighted bg-elevated ring ring-inset ring-accented",
+          subtle:
+            "text-highlighted bg-elevated ring ring-inset ring-accented",
           ghost:
             "text-highlighted bg-transparent hover:bg-elevated focus:bg-elevated disabled:bg-transparent dark:disabled:bg-transparent",
           none: "text-highlighted bg-transparent",
@@ -106,7 +112,8 @@ export default defineAppConfig({
         {
           color: "primary",
           variant: ["outline", "subtle"],
-          class: "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary",
+          class:
+            "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary",
         },
         {
           color: "primary",
@@ -116,7 +123,8 @@ export default defineAppConfig({
         {
           color: "neutral",
           variant: ["outline", "subtle"],
-          class: "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-inverted",
+          class:
+            "focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-inverted",
         },
         {
           color: "neutral",
@@ -199,7 +207,8 @@ export default defineAppConfig({
       slots: {
         root: "flex items-center gap-2",
         list: "relative flex p-1 group",
-        indicator: "absolute transition-[translate,width] duration-200",
+        indicator:
+          "absolute transition-[translate,width] duration-200",
         trigger: [
           "group relative inline-flex items-center min-w-0 data-[state=inactive]:text-muted hover:data-[state=inactive]:not-disabled:text-default font-medium rounded-md disabled:cursor-not-allowed disabled:opacity-75",
           "transition-colors",

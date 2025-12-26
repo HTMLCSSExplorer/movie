@@ -1,6 +1,18 @@
 {
   "vue.inlayHints.missingProps": true,
   "vue.autoInsert.bracketSpacing": true,
-  "cSpell.words": ["Esic", "NJZVW"],
-  "eslint.useFlatConfig": true
+  "cSpell.words": ["Esic", "NJZVW", "vueuse"],
+  "cSpell.autocorrect": true,
+  "eslint.useFlatConfig": true,
+  "nuxtr.defaultPackageManager": "NPM",
+  "nuxtr.vueFiles.script.type": "setup",
+  "nuxtr.openItemsAfterCreation": true,
+  "editor.bracketPairColorization.enabled": true,
+  "javascript.autoClosingTags": true,
+  "nuxtr.snippets.nitro": true,
+  "nuxtr.intellisense.nuxtrc": true,
+  "nuxtr.intellisense.vueFiles": true,
+  "nuxtr.snippets.nuxt": true,
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Propo"
 }
