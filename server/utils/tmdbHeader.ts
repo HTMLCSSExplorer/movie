@@ -8,6 +8,7 @@ interface ApiHeaderOptions {
 
 export const apiHeaders = () => {
   const token: string | undefined = process.env.token;
+
   const options: ApiHeaderOptions = {
     method: "GET",
     headers: {

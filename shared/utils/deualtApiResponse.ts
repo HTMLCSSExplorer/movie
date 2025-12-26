@@ -1,4 +1,4 @@
-import type { MediaApiResponse } from "../../shared/types/media";
+import type { MediaApiResponse } from "../types/media";
 
 export const emptyApiResponse = (): MediaApiResponse => {
   return {

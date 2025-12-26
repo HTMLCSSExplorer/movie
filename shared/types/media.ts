@@ -1,15 +1,9 @@
 import type { LanguageCode } from "./languageCodes";
 
 export type ActingDepartments = "Acting";
-export type MediaItem = TVMedia | MovieMedia;
+export type MediaItem = TVMedia | MovieMedia | PersonMedia;
 export type MediaType = "movie" | "tv" | "person";
 
-export interface PaginationApiResponse<T> {
-  page: number;
-  results: T[];
-  total_pages: number;
-  total_results: number;
-}
 export interface BaseMedia {
   adult: boolean;
   backdrop_path?: string;
@@ -46,7 +40,12 @@ export interface PersonMedia extends BaseMedia {
   profile_path?: string;
   known_for: MediaItem[];
 }
-
+export interface PaginationApiResponse<T> {
+  page: number;
+  results: T[];
+  total_pages: number;
+  total_results: number;
+}
 export type MovieMediaApiResponse = PaginationApiResponse<MovieMedia>;
 export type TvMediaApiResponse = PaginationApiResponse<TVMedia>;
 export type PersonMediaApiResponse = PaginationApiResponse<PersonMedia>;

@@ -6,7 +6,6 @@ export type TabValue =
   | "ontv"
   | "rent"
   | "theather"
-  | "rent"
   | "freemovie"
   | "freeshow";
 export interface TabItem {
@@ -14,3 +13,5 @@ export interface TabItem {
 
   value: TabValue;
 }
+
+ 
