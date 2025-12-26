@@ -4,8 +4,10 @@
       v-if="mediaItems.length"
       v-slot="{ item }"
       :items="mediaItems"
+      :autoplay="{ delay: delay }"
+      loop
       :ui="{
-        item: 'basis-1/4 ps-0',
+        item: 'md:basis-1/2 lg:basis-1/3 xlg:basis-1/4 ps-0',
         prev: 'sm:start-8',
         next: 'sm:end-8',
         container: 'ms-0 gap-4  p-4',
@@ -20,10 +22,11 @@
               item.poster_path ? item.poster_path : '/no-img.svg'
             }`" />
           <span
-            class="bg-warning rating flex h-16 w-16 items-center justify-center rounded-full">
-            <span class="text-2xl">{{
-              item.vote_average.toFixed(0)
-            }}</span>
+            class="rating flex items-center justify-center rounded-full"
+            :class="setRatingBgColor(item)">
+            <span class="text-3xl"
+              >{{ item.vote_average.toFixed(1) }}
+            </span>
           </span>
         </div>
       </div>
@@ -43,6 +46,7 @@
 <script setup lang="ts">
   const props = defineProps<{
     mediaItems: MediaItem[];
+    delay: number;
   }>();
 
   const getMediaDate = (item: MediaItem): string | null => {
@@ -60,6 +64,13 @@
     navigateTo(
       `/details/${item.media_type}/${item.id}-${sanitizeString("title" in item ? item.title : item.name)}`
     );
+  };
+
+  const setRatingBgColor = (item: MediaItem): string => {
+    const vote = item.vote_average;
+    if (vote >= 0 && vote < 6) return "bg-red-500";
+    if (vote >= 6 && vote < 7.5) return "bg-yellow-500";
+    return "bg-green-500";
   };
 </script>
 

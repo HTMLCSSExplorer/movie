@@ -10,7 +10,7 @@
         v-model="active" />
     </div>
     <div>
-      <UiCarousel :mediaItems="mediaItems" />
+      <UiCarousel :delay="delay" :mediaItems="mediaItems" />
     </div>
   </section>
 </template>
@@ -21,6 +21,7 @@
   const props = defineProps<{
     sectionTitle: string;
     tabItems: TabItem[];
+    delay: number;
   }>();
   const active = ref<TabValue>(props.tabItems[0]!.value);
   watch(active, async (newTab: TabValue) => {
