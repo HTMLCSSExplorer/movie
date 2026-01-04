@@ -1,10 +1,10 @@
 export default defineAppConfig({
   ui: {
     colors: {
-      primary: "blue",
-      secondary: "green",
-      accent: "gray",
-      tertiary: "indigo",
+      primary: "slate",
+      secondary: "zinc",
+      accent: "stone",
+      tertiary: "orange",
     },
     input: {
       slots: {

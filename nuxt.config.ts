@@ -10,7 +10,12 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  modules: ["@nuxt/ui", "@vueuse/nuxt", "@nuxt/image"],
+  modules: [
+    "@nuxt/ui",
+    "@vueuse/nuxt",
+    "@nuxt/image",
+    "@nuxt/eslint",
+  ],
   runtimeConfig: {
     token: process.env.token,
   },

@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <NavBar />
-    <slot />
-  </div>
+  <div>ss</div>
 </template>
 
 <script lang="ts" setup></script>

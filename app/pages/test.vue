@@ -1,10 +1,9 @@
 <template>
   <div>
-    <NavBar />
-    <slot />
+    <h1>..</h1>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script setup lang="ts"></script>
 
 <style scoped></style>
