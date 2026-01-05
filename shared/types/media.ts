@@ -4,11 +4,10 @@ import type { LanguageCode } from "./languageCodes";
 //-------------------------
 // ******Media Items*******
 //-------------------------
-export type MediaType = "movie" | "tv" | "person" | "kirekhar";
-export type MediaItem = MovieMedia | TvMedia | PersonMedia;
+export type MediaType = "movie" | "tv" | "person";
+export type MediaItem = Movie | Show | Person;
 
 // ******Base Media*******
-
 export type BaseMedia = {
   adult?: boolean;
   backdrop_path?: string;
@@ -23,33 +22,52 @@ export type BaseMedia = {
 };
 
 // ******Movie Media*******
-export interface MovieMedia extends BaseMedia {
+export interface Movie extends BaseMedia {
   original_title: string;
   release_date: string;
   title: string;
   video: boolean;
-  media_tpe?: "movie";
+  media_type?: "movie";
 }
 
 // ******Tv Show Media*******
-export interface TvMedia extends BaseMedia {
+export interface Show extends BaseMedia {
   first_air_date: string;
   name: string;
   origin_country: CountryCode[];
   original_name: string;
-  media_tpe?: "tv";
+  media_type?: "tv";
 }
 
 // ******Person Media*******
-export interface PersonMedia {
-  media_tpe?: "person";
-  adult: boolean;
+export interface Person extends BaseMedia {
+  media_type?: "person";
   gender: number;
-  id: number;
   known_for_department: string;
   name: string;
   original_name: string;
-  popularity: number;
   profile_path?: string;
   known_for: MediaItem[];
+}
+
+//-------------------------
+// ******Sections*******
+//-------------------------
+
+export type TabValue =
+  | "day"
+  | "week"
+  | "popular"
+  | "stream"
+  | "ontv"
+  | "rent"
+  | "theather"
+  | "freemovie"
+  | "freeshow";
+
+export class TabsItem {
+  constructor(
+    public label: string,
+    public value: TabValue
+  ) {}
 }
